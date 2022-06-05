@@ -10,3 +10,4 @@ gradlew.bat
 *.jar
 build/
 target/
+/gradle/wrapper/gradle-wrapper.properties
