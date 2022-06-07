@@ -7,11 +7,11 @@ import pages.pagecomponents.ResultDataFormComponent;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PageOfRegistrationForm {
-    private SelenideElement firstName = $("#firstName"),
-            secondName = $("#lastName"),
+    private SelenideElement name = $("#firstName"),
+            surname = $("#lastName"),
             email = $("#userEmail"),
             mobileNumber = $("#userNumber"),
             dateOfBirthField = $("#dateOfBirthInput"),
@@ -23,24 +23,33 @@ public class PageOfRegistrationForm {
             submit = $("#submit"),
             resultForm = $(".modal-title");
 
-
     CalenderComponent calenderComponent = new CalenderComponent();
     ResultDataFormComponent resultDataFormComponent = new ResultDataFormComponent();
 
-    public void settingFirstName(String userName) {
-        firstName.setValue(userName);
+    public void openingWebsiteWithoutAds() {
+        open("/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
     }
 
-    public void settingSecondName(String userSecondName) {
-        secondName.setValue(userSecondName);
+    public void settingFirstName(String userName) {
+        name.setValue(userName);
+    }
+
+    public void settingSurname(String userSurname) {
+        surname.setValue(userSurname);
+    }
+
+    public void settingEmail(String userEmail) {
+        email.setValue(userEmail);
     }
 
     public void settingGender(int userGender) {
         $(String.format("#gender-radio-%s", userGender)).sendKeys(" ");
     }
 
-    public void settingMobileNumber(String userMobileNumber) {
-        mobileNumber.setValue(userMobileNumber);
+    public void settingMobileNumber(long userMobileNumber) {
+        mobileNumber.setValue(String.format("%s", userMobileNumber));
     }
 
     public void settingDateOfBirth(int dayOfBirth, String monthOfBirth, int yearOfBirth) {
@@ -49,7 +58,7 @@ public class PageOfRegistrationForm {
     }
 
     public void settingSubject(String userSubject) {
-        subject.setValue(userSubject);
+        subject.sendKeys(userSubject);
         subject.sendKeys(Keys.RETURN);
     }
 
