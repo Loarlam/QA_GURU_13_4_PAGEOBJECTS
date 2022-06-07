@@ -36,6 +36,7 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
         pageOfRegistrationForm.settingAddress(userAddress);
         pageOfRegistrationForm.selectingState(userState);
         pageOfRegistrationForm.selectingCity(userCity);
+        pageOfRegistrationForm.clickingOnSubmit();
         pageOfRegistrationForm.checkingResultFormValues(userName + " " + userSurname);
         pageOfRegistrationForm.checkingResultFormValues(userEmail);
         pageOfRegistrationForm.checkingResultFormValues(String.valueOf(userGender));
@@ -46,6 +47,5 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
         pageOfRegistrationForm.checkingResultFormValues(userPictureShortPath);
         pageOfRegistrationForm.checkingResultFormValues(userAddress);
         pageOfRegistrationForm.checkingResultFormValues(userState + " " + userCity);
-
     }
 }

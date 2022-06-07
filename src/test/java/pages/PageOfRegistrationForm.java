@@ -82,8 +82,11 @@ public class PageOfRegistrationForm {
         city.setValue(userCity).sendKeys(Keys.RETURN);
     }
 
-    public void checkingResultFormValues(String validateFieldValue) {
+    public void clickingOnSubmit() {
         submit.click();
+    }
+
+    public void checkingResultFormValues(String validateFieldValue) {
         resultDataFormComponent.checkingResultFormValues(validateFieldValue);
     }
 }
