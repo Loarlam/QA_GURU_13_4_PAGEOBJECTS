@@ -26,67 +26,83 @@ public class PageOfRegistrationForm {
     CalenderComponent calenderComponent = new CalenderComponent();
     ResultDataFormComponent resultDataFormComponent = new ResultDataFormComponent();
 
-    public void openingWebsiteWithoutAds() {
+    public PageOfRegistrationForm openingWebsiteWithoutAds() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
+        return this;
     }
 
-    public void settingFirstName(String userName) {
+    public PageOfRegistrationForm settingFirstName(String userName) {
+
         name.setValue(userName);
+        return this;
     }
 
-    public void settingSurname(String userSurname) {
+    public PageOfRegistrationForm settingSurname(String userSurname) {
         surname.setValue(userSurname);
+        return this;
     }
 
-    public void settingEmail(String userEmail) {
+    public PageOfRegistrationForm settingEmail(String userEmail) {
         email.setValue(userEmail);
+        return this;
     }
 
-    public void settingGender(int userGender) {
+    public PageOfRegistrationForm settingGender(int userGender) {
         $(String.format("#gender-radio-%s", userGender)).sendKeys(" ");
+        return this;
     }
 
-    public void settingMobileNumber(long userMobileNumber) {
+    public PageOfRegistrationForm settingMobileNumber(long userMobileNumber) {
         mobileNumber.setValue(String.format("%s", userMobileNumber));
+        return this;
     }
 
-    public void settingDateOfBirth(int dayOfBirth, String monthOfBirth, int yearOfBirth) {
+    public PageOfRegistrationForm settingDateOfBirth(int dayOfBirth, String monthOfBirth, int yearOfBirth) {
         dateOfBirthField.click();
         calenderComponent.settingDateOfBirthInCalender(dayOfBirth, monthOfBirth, yearOfBirth);
+        return this;
     }
 
-    public void settingSubject(String userSubject) {
+    public PageOfRegistrationForm settingSubject(String userSubject) {
         subject.sendKeys(userSubject);
         subject.sendKeys(Keys.RETURN);
+        return this;
     }
 
-    public void settingHobbies(int userHobbies) {
+    public PageOfRegistrationForm settingHobbies(int userHobbies) {
         $(String.format("#hobbies-checkbox-%s", userHobbies)).sendKeys(" ");
+        return this;
     }
 
-    public void uploadingPicture(String userPicture) {
+    public PageOfRegistrationForm uploadingPicture(String userPicture) {
         $("#uploadPicture").uploadFile(new File(userPicture));
+        return this;
     }
 
-    public void settingAddress(String userAddress) {
+    public PageOfRegistrationForm settingAddress(String userAddress) {
         address.setValue(userAddress);
+        return this;
     }
 
-    public void selectingState(String userState) {
+    public PageOfRegistrationForm selectingState(String userState) {
         state.setValue(userState).sendKeys(Keys.RETURN);
+        return this;
     }
 
-    public void selectingCity(String userCity) {
+    public PageOfRegistrationForm selectingCity(String userCity) {
         city.setValue(userCity).sendKeys(Keys.RETURN);
+        return this;
     }
 
-    public void clickingOnSubmit() {
+    public PageOfRegistrationForm clickingOnSubmit() {
         submit.click();
+        return this;
     }
 
-    public void checkingResultFormValues(String validateFieldValue) {
+    public PageOfRegistrationForm checkingResultFormValues(String validateFieldValue) {
         resultDataFormComponent.checkingResultFormValues(validateFieldValue);
+        return this;
     }
 }

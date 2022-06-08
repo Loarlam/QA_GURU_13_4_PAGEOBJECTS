@@ -23,29 +23,29 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
 
     @Test
     void succesfulTest() {
-        pageOfRegistrationForm.openingWebsiteWithoutAds();
-        pageOfRegistrationForm.settingFirstName(userName);
-        pageOfRegistrationForm.settingSurname(userSurname);
-        pageOfRegistrationForm.settingEmail(userEmail);
-        pageOfRegistrationForm.settingGender(userGender);
-        pageOfRegistrationForm.settingMobileNumber(userPhoneNumber);
-        pageOfRegistrationForm.settingDateOfBirth(userDayOfBirth, userMonthOfBirth, userYearOfBirth);
-        pageOfRegistrationForm.settingSubject(userSubject);
-        pageOfRegistrationForm.settingHobbies(userHobbies);
-        pageOfRegistrationForm.uploadingPicture(userPicture);
-        pageOfRegistrationForm.settingAddress(userAddress);
-        pageOfRegistrationForm.selectingState(userState);
-        pageOfRegistrationForm.selectingCity(userCity);
-        pageOfRegistrationForm.clickingOnSubmit();
-        pageOfRegistrationForm.checkingResultFormValues(userName + " " + userSurname);
-        pageOfRegistrationForm.checkingResultFormValues(userEmail);
-        pageOfRegistrationForm.checkingResultFormValues(String.valueOf(userGender));
-        pageOfRegistrationForm.checkingResultFormValues(String.valueOf(userPhoneNumber));
-        pageOfRegistrationForm.checkingResultFormValues(userDayOfBirth + " " + userMonthOfBirth + "," + userYearOfBirth);
-        pageOfRegistrationForm.checkingResultFormValues(userSubject);
-        pageOfRegistrationForm.checkingResultFormValues(String.valueOf(userHobbies));
-        pageOfRegistrationForm.checkingResultFormValues(userPictureShortPath);
-        pageOfRegistrationForm.checkingResultFormValues(userAddress);
-        pageOfRegistrationForm.checkingResultFormValues(userState + " " + userCity);
+        pageOfRegistrationForm.openingWebsiteWithoutAds()
+                .settingFirstName(userName)
+                .settingSurname(userSurname)
+                .settingEmail(userEmail)
+                .settingGender(userGender)
+                .settingMobileNumber(userPhoneNumber)
+                .settingDateOfBirth(userDayOfBirth, userMonthOfBirth, userYearOfBirth)
+                .settingSubject(userSubject)
+                .settingHobbies(userHobbies)
+                .uploadingPicture(userPicture)
+                .settingAddress(userAddress)
+                .selectingState(userState)
+                .selectingCity(userCity)
+                .clickingOnSubmit()
+                .checkingResultFormValues(userName + " " + userSurname)
+                .checkingResultFormValues(userEmail)
+                .checkingResultFormValues(String.valueOf(userGender))
+                .checkingResultFormValues(String.valueOf(userPhoneNumber))
+                .checkingResultFormValues(userDayOfBirth + " " + userMonthOfBirth + "," + userYearOfBirth)
+                .checkingResultFormValues(userSubject)
+                .checkingResultFormValues(String.valueOf(userHobbies))
+                .checkingResultFormValues(userPictureShortPath)
+                .checkingResultFormValues(userAddress)
+                .checkingResultFormValues(userState + " " + userCity);
     }
 }
