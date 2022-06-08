@@ -1,5 +1,6 @@
 package tests;
 
+import enumvalues.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -39,8 +40,8 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
                 .clickingOnSubmit()
                 .checkingResultFormValues(userName + " " + userSurname)
                 .checkingResultFormValues(userEmail)
-                .checkingResultFormValues(String.valueOf(userGender))
-                .checkingResultFormValues(String.valueOf(userPhoneNumber))
+                .checkingResultFormValues(String.valueOf(Gender.values()[userGender - 1]))
+                .checkingResultFormValues(String.valueOf(Hobbies.values()[userHobbies - 1]))
                 .checkingResultFormValues(userDayOfBirth + " " + userMonthOfBirth + "," + userYearOfBirth)
                 .checkingResultFormValues(userSubject)
                 .checkingResultFormValues(String.valueOf(userHobbies))
