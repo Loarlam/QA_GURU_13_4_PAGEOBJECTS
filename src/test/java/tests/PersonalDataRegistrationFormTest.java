@@ -18,7 +18,7 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
             userCity = "Panipat";
     long userPhoneNumber = new Random().nextInt(1000000000) + 9000000000L;
     int userYearOfBirth = new Random().nextInt(101) + 1900,
-            userDayOfBirth = new Random().nextInt(27) + 1,
+            userDayOfBirth = new Random().nextInt(28) + 1,
             userGender = new Random().nextInt(3) + 1,
             userHobbies = new Random().nextInt(3) + 1;
 
@@ -41,10 +41,10 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
                 .checkingResultFormValues(userName + " " + userSurname)
                 .checkingResultFormValues(userEmail)
                 .checkingResultFormValues(String.valueOf(Gender.values()[userGender - 1]))
-                .checkingResultFormValues(String.valueOf(Hobbies.values()[userHobbies - 1]))
+                .checkingResultFormValues(String.valueOf(userPhoneNumber))
                 .checkingResultFormValues(userDayOfBirth + " " + userMonthOfBirth + "," + userYearOfBirth)
                 .checkingResultFormValues(userSubject)
-                .checkingResultFormValues(String.valueOf(userHobbies))
+                .checkingResultFormValues(String.valueOf(Hobbies.values()[userHobbies - 1]))
                 .checkingResultFormValues(userPictureShortPath)
                 .checkingResultFormValues(userAddress)
                 .checkingResultFormValues(userState + " " + userCity);
